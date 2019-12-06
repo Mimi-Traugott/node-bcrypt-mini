@@ -16,14 +16,14 @@ class App extends Component {
     let {email, password} = this.state;
     axios.post('/auth/login', {email, password}).then(res => {
       this.setState({
-        loggedInUser:res.data, email: '', password:''
+        loggedInUser: res.data, email: '', password: ''
       })
     })
   }
 
   async signup() {
-    let {email, password} = this.state
-    axios.post('/auth/signup', {email,password}).then(res => {
+    let {email, password} = this.state;
+    axios.post('/auth/signup', {email, password}).then(res => {
       this.setState({
         loggedInUser: res.data, email: '', password: ''
       })
@@ -31,8 +31,8 @@ class App extends Component {
   }
 
   logout() {
-    axios.post('/auth/logout')
-    this.setState({loggedInUser:{}})
+    axios.post('/auth/logout');
+    this.setState({loggedInUser: {}});
   }
 
   render() {
